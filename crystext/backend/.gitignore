@@ -1,0 +1,11 @@
+node_modules
+.env
+uploads/*
+!uploads/.gitkeep
+*.log
+.DS_Store
+
+crystext_cif_model/
+crystext_gpt2/
+__pycache__/
+generated_cifs/
