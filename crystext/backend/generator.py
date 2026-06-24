@@ -1,8 +1,8 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-MODEL_PATH = "crystext_cif_model"
+MODEL_PATH = "akshith2006/crystext-cif-model"
 
-print("Loading model...")
+print("Loading model from Hugging Face...")
 
 tokenizer = GPT2Tokenizer.from_pretrained(MODEL_PATH)
 model = GPT2LMHeadModel.from_pretrained(MODEL_PATH)
@@ -17,11 +17,11 @@ def generate_cif(prompt):
     )
 
     outputs = model.generate(
-    **inputs,
-    max_length=512,
-    do_sample=True,
-    temperature=0.7
-)
+        **inputs,
+        max_length=512,
+        do_sample=True,
+        temperature=0.7
+    )
 
     result = tokenizer.decode(
         outputs[0],
